@@ -1,7 +1,7 @@
 import { Schema, model, Document, Types } from "mongoose";
 import { AutoIncrementID } from "@typegoose/auto-increment";
 
-export type ICategory = Document & {
+export interface ICategory extends Document {
   name: string;
   description: string;
   parentCategoryId: Types.ObjectId | null;
@@ -13,7 +13,7 @@ export type ICategory = Document & {
   isVisible: boolean;
   slug: string;
   order: number;
-};
+}
 
 const categorySchema = new Schema(
   {

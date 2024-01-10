@@ -1,15 +1,15 @@
 import { Schema, model, Document, Types } from "mongoose";
 
-export type ICartItem = {
+export interface ICartItem {
   productId: Types.ObjectId;
   quantity: number;
   price: number;
-};
+}
 
-export type IShoppingCart = Document & {
+export interface IShoppingCart extends Document {
   userId: Types.ObjectId;
   items: ICartItem[];
-};
+}
 
 const shoppingCartSchema = new Schema<IShoppingCart>(
   {

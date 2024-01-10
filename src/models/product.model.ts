@@ -1,7 +1,7 @@
 import { Schema, model, Document, Types } from "mongoose";
 import { AutoIncrementID } from "@typegoose/auto-increment";
 
-export type IProduct = Document & {
+export interface IProduct extends Document {
   name: string;
   description: string;
   price: number;
